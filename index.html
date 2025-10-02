@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Innovative Solutions for Flood Prevention</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Leaflet & Chart.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header id="header">
+  <h1>Innovative Solutions for Flood Prevention</h1>
+  <p>Protecting Communities and Preventing Flooding Risks</p>
+</header>
+
+<nav id="topnav">
+  <ul>
+    <li><a href="#flood-alerts">Flood Alerts</a></li>
+    <li><a href="#real-time-monitoring">Real-Time Monitoring</a></li>
+    <li><a href="#mobile-app">Mobile App</a></li>
+    <li><a href="#community-engagement">Community Engagement</a></li>
+    <li><a href="#nature-based-solutions">Nature-Based Solutions</a></li>
+    <li><a href="#flood-forecast">Flood Forecast</a></li>
+    <li><a href="#system-effectiveness">System Effectiveness</a></li>
+    <li><a href="#historical-data">Historical Data</a></li>
+    <li><a href="#sms-alerts">SMS Alerts</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- Flood Alerts -->
+  <section id="flood-alerts" class="section">
+    <h2>Flood Alerts</h2>
+
+    <div class="alerts-grid">
+      <button class="alert-color green"   data-risk="Code Green: Safe">Code Green: Safe</button>
+      <button class="alert-color yellow"  data-risk="Code Yellow: Watch">Code Yellow: Watch</button>
+      <button class="alert-color orange"  data-risk="Code Orange: Caution">Code Orange: Caution</button>
+      <button class="alert-color red"     data-risk="Code Red: Danger">Code Red: Danger</button>
+    </div>
+
+    <p class="current-risk">Current Flood Risk:
+      <span id="current-risk">Code Yellow: Watch</span>
+    </p>
+
+    <div class="cta-row">
+      <button id="btn-subscribe-sms">Subscribe for SMS Alerts</button>
+      <span id="sms-status" class="muted"></span>
+    </div>
+  </section>
+
+  <!-- Real-Time Monitoring -->
+  <section id="real-time-monitoring" class="section">
+    <h2>Real-Time Monitoring</h2>
+
+    <div id="map" aria-label="Interactive Map of Minaog River"></div>
+    <p class="muted center">Interactive Map of Minaog River</p>
+
+    <div class="panel">
+      <h3>Current Water Level</h3>
+      <p>Current Water Level: <span id="water-level">3.2 meters</span></p>
+      <button id="btn-view-historical">View Historical Data</button>
+    </div>
+
+    <div class="panel">
+      <h3>Water Level Chart</h3>
+      <canvas id="water-level-chart" height="120"></canvas>
+    </div>
+  </section>
+
+  <!-- Mobile App -->
+  <section id="mobile-app" class="section">
+    <h2>Mobile App</h2>
+    <p>Download the app for real-time flood alerts, weather updates, and evacuation routes.</p>
+    <div class="btn-row">
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.yourapp" target="_blank" rel="noopener">Google Play</a>
+      <a class="store-btn" href="https://apps.apple.com/us/app/yourapp/id123456789" target="_blank" rel="noopener">App Store</a>
+    </div>
+    <h3>App Features</h3>
+    <ul class="checklist">
+      <li>Push notifications for flood alerts</li>
+      <li>Weather and flood risk tracking</li>
+      <li>Evacuation route maps</li>
+    </ul>
+  </section>
+
+  <!-- Community Engagement -->
+  <section id="community-engagement" class="section">
+    <h2>Community Engagement</h2>
+    <p>Learn how to prevent flooding and get involved in your community's efforts!</p>
+    <button id="btn-get-involved">Get Involved</button>
+
+    <h3>Upcoming Events</h3>
+    <ul>
+      <li>Flood Awareness Seminar - October 15, 2025</li>
+      <li>Community Clean-Up - November 1, 2025</li>
+      <li>Reforestation Drive - December 5, 2025</li>
+    </ul>
+
+    <h3>Community Involvement Statistics</h3>
+    <ul>
+      <li><strong>500+</strong> people attended recent workshops</li>
+      <li><strong>75%</strong> subscribed to flood alert SMS</li>
+      <li><strong>30%</strong> completed flood preparedness training</li>
+    </ul>
+  </section>
+
+  <!-- Nature-Based Solutions -->
+  <section id="nature-based-solutions" class="section">
+    <h2>Nature-Based Solutions</h2>
+    <p>Explore how green infrastructure, reforestation, and water retention zones reduce flood risks.</p>
+    <button id="btn-learn-more">Learn More</button>
+    <h3>Current Projects</h3>
+    <ul>
+      <li>Riverbank stabilisation in progress</li>
+      <li>Reforestation covering 100 hectares</li>
+      <li>Water retention ponds in flood-prone areas</li>
+    </ul>
+  </section>
+
+  <!-- NEW: Flood Forecast -->
+  <section id="flood-forecast" class="section">
+    <h2>Flood Forecast</h2>
+    <p class="muted">7-day outlook based on recent rain and upstream gauge data (dummy values).</p>
+    <canvas id="forecast-chart" height="120"></canvas>
+  </section>
+
+  <!-- NEW: System Effectiveness -->
+  <section id="system-effectiveness" class="section">
+    <h2>System Effectiveness</h2>
+    <div class="kpi-grid">
+      <div class="kpi"><span class="kpi-value" id="kpi-leadtime">45 min</span><span class="kpi-label">Avg. Warning Lead Time</span></div>
+      <div class="kpi"><span class="kpi-value" id="kpi-accuracy">92%</span><span class="kpi-label">Alert Accuracy</span></div>
+      <div class="kpi"><span class="kpi-value" id="kpi-uptime">99.3%</span><span class="kpi-label">System Uptime</span></div>
+      <div class="kpi"><span class="kpi-value" id="kpi-optin">76%</span><span class="kpi-label">Residents Opt-In</span></div>
+    </div>
+  </section>
+
+  <!-- NEW: Historical Data -->
+  <section id="historical-data" class="section">
+    <h2>Historical Data</h2>
+    <p>Download or preview sample historical water-level data (dummy CSV will be generated).</p>
+    <div class="btn-row">
+      <button id="btn-download-csv">Download CSV</button>
+      <button id="btn-preview-csv">Preview in Page</button>
+    </div>
+    <div id="csv-preview" class="table-wrap" aria-live="polite"></div>
+  </section>
+
+  <!-- NEW: SMS Alerts -->
+  <section id="sms-alerts" class="section">
+    <h2>SMS Alerts</h2>
+    <form id="sms-form" class="sms-form">
+      <label>
+        Phone Number
+        <input type="tel" id="sms-phone" placeholder="+63 9xx xxx xxxx" required />
+      </label>
+      <label class="inline">
+        <input type="checkbox" id="sms-terms" required />
+        I agree to receive emergency SMS and alerts.
+      </label>
+      <button type="submit">Enable SMS Alerts</button>
+      <span id="sms-form-status" class="muted"></span>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Innovative Solutions for Flood Prevention • All Rights Reserved</p>
+  <p>Contact: <a href="mailto:info@floodprevention.com">info@floodprevention.com</a></p>
+  <p>Follow:
+    <a href="#">Facebook</a> •
+    <a href="#">Threads</a> •
+    <a href="#">Instagram</a>
+  </p>
+</footer>
+
+<!-- Libs -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- App JS -->
+<script src="app.js"></script>
+</body>
+</html>
