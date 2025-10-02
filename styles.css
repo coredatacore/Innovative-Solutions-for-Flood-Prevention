@@ -85,3 +85,16 @@ button:hover,.store-btn:hover{opacity:.9}
 .sms-form .inline{display:flex;gap:8px;align-items:center}
 footer{padding:32px 16px;text-align:center;color:#dbe3f0;background:#0b1020;margin-top:24px}
 footer a{color:#fff}
+
+.app-feature-images {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;  /* Allows wrapping of images if there's not enough space */
+}
+
+.app-feature-image {
+  max-width: 100%; /* Ensures images do not overflow */
+  height: auto;    /* Keeps the original aspect ratio of the images */
+  border-radius: 8px; /* Optional for rounded corners */
+}
